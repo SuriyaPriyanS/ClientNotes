@@ -13,7 +13,7 @@ import {
 } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 import NoteCard from './NoteCard';
-import useDebounce from '../Hooks/usedebounce';
+import usedebounce from '../Hooks/usedebounce'
 import {
   getNotes,
   createNote,
@@ -34,7 +34,7 @@ const NotesList = () => {
   const [validated, setValidated] = useState(false);
 
   const token = localStorage.getItem('token');
-  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+  const debouncedSearchTerm = usedebounce(searchTerm, 300);
 
   // Fetch notes on mount
   useEffect(() => {
