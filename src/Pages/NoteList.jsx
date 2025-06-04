@@ -55,13 +55,13 @@ const NotesList = () => {
 
   // Filter notes based on search
   const filteredNotes = useMemo(() => {
-    if (!debouncedSearchTerm) return notes;
+    if (!searchTerm) return notes;
     return notes.filter(
       (note) =>
-        note.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
-        note.content.toLowerCase().includes(debouncedSearchTerm.toLowerCase())
+        note.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        note.content.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }, [notes, debouncedSearchTerm]);
+  }, [notes, searchTerm]);
 
   const handleShowModal = useCallback((note = { id: null, title: '', content: '' }) => {
     setCurrentNote(note);
