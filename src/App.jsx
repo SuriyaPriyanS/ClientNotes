@@ -11,7 +11,7 @@ import NotesList from './Pages/NoteList.jsx';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./Pages/Homespages'));
-const NotesList = lazy(() => import('./Pages/NoteList'));
+
 const Register = lazy(() => import('./Pages/Register'));
 const Login = lazy(() => import('./Pages/Loginpage'));
 const Profile = lazy(() => import('./Pages/Profile'));
