@@ -1,5 +1,5 @@
 // src/api.js
-const API_BASE = 'http://localhost:5000'; // Replace with your API base URL
+const API_BASE = 'https://servernotesapp-1.onrender.com'; // Replace with your API base URL
 
 // AUTH APIs
 export const login = async (credentials) => {
