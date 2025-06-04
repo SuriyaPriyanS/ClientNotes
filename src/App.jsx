@@ -7,6 +7,7 @@ import LoadingSpinner from './Components/LoadingSpinner';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Dashboard from './Pages/DashBoard';
+import NotesList from './Pages/NoteList.jsx';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./Pages/Homespages'));

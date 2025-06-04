@@ -13,7 +13,7 @@ import {
 } from 'react-bootstrap';
 import { Search } from 'react-bootstrap-icons';
 import NoteCard from './NoteCard';
-import useDebounce from '../Hooks/usedebounce.jsx';
+import useDebounce from '../Hooks/usedebounce';
 import {
   getNotes,
   createNote,
