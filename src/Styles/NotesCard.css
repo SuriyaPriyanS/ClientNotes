@@ -1,0 +1,120 @@
+/* src/Styles/NotesCard.css */
+.note-card {
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.note-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.note-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note-content {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.note-content-truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-action-button {
+  border-radius: 6px;
+  padding: 0.35rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.note-action-button:hover {
+  transform: translateY(-2px);
+}
+
+.note-action-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+.note-expand-button {
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.note-expand-button:hover {
+  color: #00b357;
+  text-decoration: underline;
+}
+
+.note-expand-button:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.note-date {
+  font-size: 0.85rem;
+  color: #adb5bd;
+}
+
+@media (max-width: 576px) {
+  .note-card {
+    margin-bottom: 1rem;
+  }
+
+  .note-title {
+    font-size: 1.1rem;
+  }
+
+  .note-content {
+    font-size: 0.95rem;
+  }
+
+  .note-action-button {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .note-expand-button {
+    font-size: 0.85rem;
+  }
+
+  .note-date {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .note-card {
+    padding: 0.5rem;
+  }
+
+  .note-title {
+    font-size: 1rem;
+  }
+
+  .note-action-button {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.6rem;
+  }
+}

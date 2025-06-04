@@ -1,0 +1,139 @@
+/* src/Styles/Notes.css */
+.notes-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.notes-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: -0.02em;
+}
+
+.notes-search {
+  max-width: 300px;
+}
+
+.notes-search-icon {
+  background-color: #f8f9fa;
+  border: 1px solid #dfe6e9;
+  border-right: none;
+  color: #6c757d;
+}
+
+.notes-input {
+  border-radius: 8px;
+  border: 1px solid #dfe6e9;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notes-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+  outline: none;
+}
+
+.notes-button {
+  border-radius: 8px;
+  padding: 0.65rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.notes-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.notes-alert {
+  border-radius: 8px;
+  font-size: 0.9rem;
+  background-color: #e6ffed;
+  border-color: #ccffdd;
+  color: #2d7a47;
+}
+
+.notes-empty-card {
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.notes-empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.notes-empty-text {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.notes-modal {
+  --bs-modal-border-radius: 12px;
+}
+
+.notes-modal-header {
+  background: linear-gradient(90deg, #2c3e50 0%, #1a252f 100%);
+  border: none;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.notes-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.notes-modal-footer {
+  border: none;
+  padding-top: 0;
+}
+
+.notes-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 0.5rem;
+}
+
+.notes-feedback {
+  font-size: 0.85rem;
+  color: #d63031;
+}
+
+@media (max-width: 576px) {
+  .notes-title {
+    font-size: 1.75rem;
+  }
+
+  .notes-search,
+  .notes-button {
+    font-size: 0.95rem;
+    padding: 0.65rem;
+  }
+
+  .notes-empty-title {
+    font-size: 1.25rem;
+  }
+
+  .notes-empty-text {
+    font-size: 0.9rem;
+  }
+
+  .notes-modal-title {
+    font-size: 1.1rem;
+  }
+}

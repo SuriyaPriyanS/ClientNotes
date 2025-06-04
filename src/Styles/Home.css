@@ -1,0 +1,97 @@
+/* src/Styles/HomePage.css */
+.homepage-container {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.homepage-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.homepage-lead {
+  font-size: 1.25rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+.feature-card {
+  border-radius: 12px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.feature-text {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.feature-button {
+  border-radius: 8px;
+  padding: 0.65rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.1s ease;
+}
+
+.feature-button:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+  .homepage-title {
+    font-size: 2rem;
+  }
+
+  .homepage-lead {
+    font-size: 1.1rem;
+  }
+
+  .feature-title {
+    font-size: 1.25rem;
+  }
+
+  .feature-text {
+    font-size: 0.9rem;
+  }
+
+  .feature-button {
+    font-size: 0.95rem;
+    padding: 0.55rem 1.2rem;
+  }
+
+  .feature-card {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .homepage-title {
+    font-size: 1.75rem;
+  }
+
+  .homepage-lead {
+    font-size: 1rem;
+  }
+}

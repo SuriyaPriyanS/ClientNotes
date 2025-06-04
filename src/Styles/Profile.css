@@ -1,0 +1,16 @@
+/* src/Styles/Profile.css */
+
+.profile-page {
+  background-color: #fdfdfd;
+  min-height: 100vh;
+}
+
+.note-card {
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.note-card:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

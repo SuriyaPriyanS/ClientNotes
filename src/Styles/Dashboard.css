@@ -1,0 +1,126 @@
+/* Dashboard main container */
+.dashboard-container {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Chart card */
+.shadow {
+  box-shadow: 0 8px 24px rgba(44, 62, 80, 0.08) !important;
+}
+
+.user-card {
+  border-radius: 12px;
+  border: none;
+  background: #fff;
+  transition: box-shadow 0.2s;
+}
+
+.user-card:hover {
+  box-shadow: 0 12px 32px rgba(44, 62, 80, 0.15) !important;
+}
+
+.user-card .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.user-card .card-subtitle {
+  font-size: 1rem;
+}
+
+.user-card .text-success {
+  font-weight: 600;
+}
+
+.user-card .text-warning {
+  font-weight: 600;
+}
+
+/* Chart section */
+.card .chartjs-render-monitor {
+  max-height: 320px;
+}
+
+/* Chat section */
+.card-header {
+  background: #007bff;
+  color: #fff;
+  font-weight: 600;
+  border-top-left-radius: 12px !important;
+  border-top-right-radius: 12px !important;
+}
+
+.card-body {
+  background: #fff;
+}
+
+.list-group-item {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.list-group-item.text-muted {
+  color: #adb5bd !important;
+}
+
+form.d-flex {
+  gap: 0.5rem;
+}
+
+form.d-flex .form-control {
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form.d-flex .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  font-size: 1rem;
+  background: #007bff;
+  border: none;
+  transition: background 0.2s;
+}
+
+form.d-flex .btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .dashboard-container {
+    padding: 1rem 0.5rem;
+  }
+  .user-card .card-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0.5rem 0.25rem;
+  }
+  .user-card {
+    margin-bottom: 1rem;
+  }
+  .card .chartjs-render-monitor {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-container {
+    padding: 0.25rem 0.1rem;
+  }
+  .user-card .card-title {
+    font-size: 0.95rem;
+  }
+  .card-header {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}
