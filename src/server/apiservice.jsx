@@ -1,5 +1,5 @@
 // src/api.js
-const API_BASE = 'https://backenddepolyment-1.onrender.com'; // Replace with your API base URL
+const API_BASE = 'https://backenddepolyment-2.onrender.com'; // Replace with your API base URL
 
 // AUTH APIs
 export const login = async (credentials) => {
@@ -48,10 +48,11 @@ export const getUser = async (token) => {
 
 export const getAllUsers = async ()=> {
     const response = await fetch(`${API_BASE}/api/users/profile`, {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`,
-    //   },
+      // headers: {
+      //   Authorization: `Bearer ${token}`,
+      // },
     });
+    console.log(response, 'response in get all users');
     if (!response.ok) {
       const error = await response.json();
       throw new Error(error.message || 'Failed to fetch users');
@@ -125,7 +126,7 @@ export const createNote = async (noteData, token) => {
 };
 
 export const updateNote = async (id, noteData, token) => {
-  const response = await fetch(`${API_BASE}/api/notes${id}`, {
+  const response = await fetch(`${API_BASE}/api/notes/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -133,6 +134,8 @@ export const updateNote = async (id, noteData, token) => {
     },
     body: JSON.stringify(noteData),
   });
+
+  console.log(response, 'response in update note');
   if (!response.ok) throw new Error('Failed to update note');
   return await response.json();
 };
@@ -144,6 +147,8 @@ export const deleteNote = async (id, token) => {
       Authorization: `Bearer ${token}`,
     },
   });
+
+  console.log(response, 'response in delete note');
   if (!response.ok) throw new Error('Failed to delete note');
   return await response.json();
 };

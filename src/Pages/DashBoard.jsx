@@ -44,7 +44,7 @@ const Dashboard = () => {
     fetchDashboardData();
   }, [token]);
 
-  // Compute note count per user (support both userId and user_id)
+  // Compute note count and notes per user
   const usersWithStats = useMemo(() => {
     return users.map((user) => {
       const userNotes = notes.filter(
@@ -53,6 +53,7 @@ const Dashboard = () => {
       return {
         ...user,
         notesCount: userNotes.length,
+        userNotes,
       };
     });
   }, [users, notes]);
@@ -133,6 +134,12 @@ const Dashboard = () => {
                     <Card.Title>{user.name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">{user.email}</Card.Subtitle>
                     <p className="mb-1">
+                      <strong>Username:</strong> {user.username}
+                    </p>
+                    <p className="mb-1">
+                      <strong>User ID:</strong> {user.id}
+                    </p>
+                    <p className="mb-1">
                       Status:{' '}
                       <strong className={user.status === 'Active' ? 'text-success' : 'text-warning'}>
                         {user.status}
@@ -147,6 +154,21 @@ const Dashboard = () => {
                     <p className="mb-0">
                       Notes Created: <strong>{user.notesCount}</strong>
                     </p>
+                    <div style={{ marginTop: 10 }}>
+                      {user.userNotes.length === 0 ? (
+                        <span className="text-muted" style={{ fontSize: '0.9em' }}>
+                          No notes created.
+                        </span>
+                      ) : (
+                        <ul style={{ paddingLeft: 18, marginBottom: 0 }}>
+                          {user.userNotes.map((note) => (
+                            <li key={note.id} style={{ fontSize: '0.95em' }}>
+                              {note.title}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>

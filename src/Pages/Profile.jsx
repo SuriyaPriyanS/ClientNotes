@@ -12,28 +12,31 @@ const Profile = () => {
   const token = localStorage.getItem('token');
   const decodedUser = token ? jwtDecode(token) : null; // ✅ Correct usage
 
-  useEffect(() => {
-    const fetchNotes = async () => {
-      try {
-        const allNotes = await getNotes(token);
-        const userNotes = allNotes.filter(
-          (note) => note.userId === decodedUser.id || note.user_id === decodedUser.id
-        );
-        setNotes(userNotes);
-      } catch (err) {
-        setError(err.message || 'Failed to load notes.');
-      } finally {
-        setLoading(false);
-      }
-    };
+ useEffect(() => {
+  if (!token) {
+    setError('Unauthorized. Please login again.');
+    setLoading(false);
+    return;
+  }
 
-    if (decodedUser) {
-      fetchNotes();
-    } else {
-      setError('Unauthorized. Please login again.');
+  const decoded = jwtDecode(token);
+
+  const fetchNotes = async () => {
+    try {
+      const allNotes = await getNotes(token);
+      const userNotes = allNotes.filter(
+        (note) => note.userId === decoded.id || note.user_id === decoded.id
+      );
+      setNotes(userNotes);
+    } catch (err) {
+      setError(err.message || 'Failed to load notes.');
+    } finally {
       setLoading(false);
     }
-  }, [token, decodedUser]);
+  };
+
+  fetchNotes();
+}, [token]);
 
   const handleLogout = () => {
     localStorage.removeItem('token');
