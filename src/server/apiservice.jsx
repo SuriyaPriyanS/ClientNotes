@@ -1,9 +1,9 @@
 // src/api.js
-const API_BASE = 'https://servernotesapp-1.onrender.com'; // Replace with your API base URL
+const API_BASE = 'https://backenddepolyment-1.onrender.com'; // Replace with your API base URL
 
 // AUTH APIs
 export const login = async (credentials) => {
-  const response = await fetch(`${API_BASE}/auth/login`, {
+  const response = await fetch(`${API_BASE}/api/users/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -18,13 +18,14 @@ export const login = async (credentials) => {
 };
 
 export const register = async (userData) => {
-  const response = await fetch(`${API_BASE}/auth/register`, {
+  const response = await fetch(`${API_BASE}/api/users/register`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(userData),
   });
+  console.log(response, 'response22');
   if (!response.ok) {
     const error = await response.json();
     throw new Error(error.message || 'Registration failed');
@@ -33,7 +34,7 @@ export const register = async (userData) => {
 };
 
 export const getUser = async (token) => {
-  const response = await fetch(`${API_BASE}/auth/user/${id}`, {
+  const response = await fetch(`${API_BASE}/api/users/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -46,7 +47,7 @@ export const getUser = async (token) => {
 };
 
 export const getAllUsers = async ()=> {
-    const response = await fetch(`${API_BASE}/auth/user`, {
+    const response = await fetch(`${API_BASE}/api/users/profile`, {
     //   headers: {
     //     Authorization: `Bearer ${token}`,
     //   },
@@ -58,7 +59,7 @@ export const getAllUsers = async ()=> {
     return await response.json();
 }
 export const updateUser = async (id, userData, token) => {
-  const response = await fetch(`${API_BASE}/users/${id}`, {
+  const response = await fetch(`${API_BASE}/api/users/profile/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -74,7 +75,7 @@ export const updateUser = async (id, userData, token) => {
 };
 
 export const deleteUser = async (id, token) => {
-  const response = await fetch(`${API_BASE}/users/${id}`, {
+  const response = await fetch(`${API_BASE}/api/users/profile/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
@@ -91,7 +92,7 @@ export const deleteUser = async (id, token) => {
 
 // NOTES APIs (as provided)
 export const getNotes = async (token) => {
-  const response = await fetch(`${API_BASE}/notes`, {
+  const response = await fetch(`${API_BASE}/api/notes`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -101,7 +102,7 @@ export const getNotes = async (token) => {
 };
 
 export const getNoteById = async (id, token) => {
-  const response = await fetch(`${API_BASE}/notes/${id}`, {
+  const response = await fetch(`${API_BASE}/api/notes/${id}`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -111,7 +112,7 @@ export const getNoteById = async (id, token) => {
 };
 
 export const createNote = async (noteData, token) => {
-  const response = await fetch(`${API_BASE}/notes`, {
+  const response = await fetch(`${API_BASE}/api/notes`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -124,7 +125,7 @@ export const createNote = async (noteData, token) => {
 };
 
 export const updateNote = async (id, noteData, token) => {
-  const response = await fetch(`${API_BASE}/notes/${id}`, {
+  const response = await fetch(`${API_BASE}/api/notes${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -137,7 +138,7 @@ export const updateNote = async (id, noteData, token) => {
 };
 
 export const deleteNote = async (id, token) => {
-  const response = await fetch(`${API_BASE}/notes/${id}`, {
+  const response = await fetch(`${API_BASE}/api/notes/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: `Bearer ${token}`,
